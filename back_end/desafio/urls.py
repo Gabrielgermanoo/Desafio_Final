@@ -21,6 +21,8 @@ from Sume import views
 
 router = routers.DefaultRouter()
 router.register(r'projetos', views.ProjetoView)
+router.register(r'contratos', views.ContratosView)
+
 
 urlpatterns = [
     path ('', include(router.urls)),
