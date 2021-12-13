@@ -52,18 +52,29 @@
                                 <input type="text" class="form-control" id="numero" disabled>
                             </div>
                             <div class="col">
-                                <label for="fornecedor" class="form-label">Fornecedor (razão social)</label>
-                                <input type="text" class="form-control" id="fornecedor">
+                                <div class="form-group">
+                                    <label for="fornecedor" class="form-label">Fornecedor (razão social)</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option selected>Digite um termo...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                
+
                             </div>
                             <div class="col">
                                 <label for="nota_fiscal" class="form-label">Nota fiscal</label>
-                                <input type="number" class="form-control" id="nota_fiscal">
+                                <input type="number" class="form-control" id="nota_fiscal" placeholder="Digite um termo...">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <label for="item_nota_fiscal" class="form-label">Item da Nota Fiscal</label>
-                                <input type="text" class="form-control" id="item_nota_fiscal">
+                                <input type="text" class="form-control" id="item_nota_fiscal"placeholder="Digite um termo...">
                             </div>
                             <div class="col">
                                 <label for="quantidade_vinculada" class="form-label">Quantidade Vinculada</label>
@@ -131,7 +142,7 @@
                 </div>
                 <!-- //aba bens -->
 
-                <!-- aba Projetos -->
+                <!-- aba Observações -->
                 <div class="tab-pane fade" id="projeto" role="tabpanel" aria-labelledby="projeto-tab">
                     <div class="mb-3">
                         <label for="objeto" class="form-label">Observações</label>
@@ -141,7 +152,7 @@
                     </div>
 
                 </div>
-                <!-- //aba projetos -->
+                <!-- //aba Observações -->
             </div>
         </div>
 
@@ -233,8 +244,7 @@
                     </div>
                     <div class="modal-footer mt-4">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
-                            >Adicionar</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Adicionar</button>
                     </div>
                 </form>
             </div>

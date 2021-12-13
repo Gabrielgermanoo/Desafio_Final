@@ -74,4 +74,34 @@ class FornecedoresView(viewsets.ModelViewSet):
 
         models.Vigencias.objects.create(**vigencia)
 
-        return Response({'message':'Contrato e vigencia criados'}, status=500)
+        naturezasdespesa = {
+            'cod_natureza_despesa': request.data['cod_natureza_despesa'],
+            'desc_natureza_despesa': request.data['desc_natureza_despesa']
+        }
+        models.NaturezasDespesa.objects.create(**naturezasdespesa)
+
+        projetos = {
+            'titulo': request.data['titulo'],
+            'dt_inicio_vigencia': models.Vigencias.objects.get(dt_inicio_vigencia = request.data['dt_inicio_vigencia']),
+            'dt_fim_vigencia': models.Vigencias.objects.get(dt_fim_vigencia = request.data['dt_fim_vigencia']),
+        }
+        
+
+        fornecedores = {
+            'razao_social': request.data['razao_social'],
+            'cnpj': request.data['cnpj'],
+            'email': request.data['email'],
+            'telefone': request.data['telefone'],
+        }
+
+        ordens = {
+            'id_projeto': models.Projetos.objects.create(**projetos),
+            'id_fornecedor': models.Fornecedores.objects.create(**fornecedores),
+            'id_natureza_despesa': models.NaturezasDespesa.objects.create(**naturezasdespesa),
+            'numero': request.data['numero'],
+            'ano': request.data['ano']
+        }
+
+
+        return Response({'message':'Contrato, vigencia e naturezasdespesa criados'}, status=201)
+
